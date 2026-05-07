@@ -1,0 +1,11 @@
+file_format: "1"
+id: nicepad
+name: nicepad
+type: shield
+url: https://github.com/yourname/nicepad
+requires: [nice_nano_v2]
+features:
+  - keys
+  - studio
+siblings:
+  - nice_nano_v2
