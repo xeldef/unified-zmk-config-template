@@ -1,0 +1,26 @@
+#include <dt-bindings/zmk/rgb.h>
+
+/ {
+    chosen {
+        zmk,underglow = &underglow;
+    };
+
+    underglow: ws2812 {
+        compatible = "worldsemi,ws2812-gpio";
+        chain-length = <8>;
+        color-mapping = <RGB>;
+        gpio = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios =
+            <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
+            <&gpio0 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
